@@ -11,25 +11,15 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
+        <q-toolbar-title> Quasar App </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
+        <q-item-label header> Essential Links </q-item-label>
 
         <EssentialLink
           v-for="link in essentialLinks"
@@ -54,19 +44,19 @@ const linksList = [
     title: 'Docs',
     caption: 'quasar.dev',
     icon: 'school',
-    link: 'https://quasar.dev'
+    link: 'https://quasar.dev',
   },
   {
     title: 'Github',
     caption: 'github.com/quasarframework',
     icon: 'code',
-    link: 'https://github.com/quasarframework'
+    link: 'https://github.com/quasarframework',
   },
   {
     title: 'Starwar Wiki',
     caption: 'starwars.fandom.com',
     icon: 'star',
-    link: 'https://starwars.fandom.com/wiki/Main_Page'
+    link: 'https://starwars.fandom.com/wiki/Main_Page',
   },
 ];
 
@@ -74,19 +64,19 @@ export default defineComponent({
   name: 'MainLayout',
 
   components: {
-    EssentialLink
+    EssentialLink,
   },
 
-  setup () {
-    var leftDrawerOpen = ref(false)
+  setup() {
+    var leftDrawerOpen = ref(false);
 
     return {
       essentialLinks: linksList,
       leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
-    }
-  }
+      toggleLeftDrawer() {
+        leftDrawerOpen.value = !leftDrawerOpen.value;
+      },
+    };
+  },
 });
 </script>
